@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-self: baseline;
     min-height: 50vh;
-    background: #222;
+    background:black;
 }
 .container{
     position: relative;
@@ -23,25 +23,67 @@ body{
     grid-gap: 10px;
 }
 .container .box{
-    background: #333;
+    background:black;
     padding: 20px;
     display: grid;
     font-size: 25px;
     place-items: center;
     text-align: center;
-    color: #fff;
+    color:grey;
     transition: 0.5s;
 }
 
-.container .box:hover{
-    background-color:brown;
-}
 
+.container .box:hover{
+    border-radius: 10%;
+    box-shadow: 0 0 15px white;
+    
+}
 .container .box img{
     position: relative;
     max-width: 100px;
     margin-bottom: 10px;
 }
+
+
+.container .box .content img{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background:black;
+    border-radius: 300%;
+    color:black;
+    transition: .5s;
+}
+.container .box .content img::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    border-radius: 300%;
+    transition: .5s;
+    transform: scale(.9);
+    z-index: -1;
+}
+.container .box .content img:hover::before{
+    transform: scale(1.1);
+    box-shadow:0 0 15px white ;
+}
+.container .box .content img:hover{
+    box-shadow: 0 0 10px white;
+   
+}
+
+.container .box .content p:hover{
+    text-shadow: 0 0 2px grey;
+}
+
+
+.container footer{
+    color:grey;
+    position: relative;
+}
+
 .container .box:nth-child(1){
     grid-column: span 2;
     grid-row: span 1;
@@ -60,6 +102,7 @@ body{
     grid-column: span 3;
     grid-row:span 1;
 }
+
 @media (max-width:991px){
     .container{
         grid-template-columns: repeat(auto-fill, minmax(50%,1fr));
@@ -68,5 +111,8 @@ body{
     .container .box{
         grid-column: unset !important;
         grid-row: unset !important;
+    }
+    .container footer{
+        text-align: center;
     }
 }
