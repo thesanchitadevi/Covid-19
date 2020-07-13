@@ -35,7 +35,7 @@ body{
 
 
 .container .box:hover{
-    border-radius: 10%;
+    border-radius: 30px;
     box-shadow: 0 0 15px white;
     
 }
