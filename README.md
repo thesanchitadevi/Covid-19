@@ -1,2 +1,2 @@
-# COVID
+
 # covid_19
